@@ -13,4 +13,6 @@
     <string name="download">Download</string>
     <string name="todo">TODO</string>
     <string name="fab_button">FAB button</string>
+    <string name="defaults">Default</string>
+    <string name="click_me">Click me</string>
 </resources>

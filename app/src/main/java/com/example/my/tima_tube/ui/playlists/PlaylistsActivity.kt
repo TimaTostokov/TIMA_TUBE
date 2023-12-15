@@ -11,8 +11,7 @@ import com.example.my.tima_tube.result.Status
 import com.example.my.tima_tube.ui.detail.DetailActivity
 import com.example.my.tima_tube.ui.playlists.adapter.PlaylistAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.example.my.tima_tube.data.remote.model.Item as Item1
-
+import com.example.my.tima_tube.data.remote.model.Item1
 class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewModel>() {
 
     private var adapter = PlaylistAdapter(this::onClick)
@@ -34,6 +33,14 @@ class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewMo
 
     override fun initViewModel() {
         super.initViewModel()
+
+        //custom
+        binding.customCardView.apply {
+            onCustomButtonClick {
+                changeText("Text changed")
+            }
+        }
+
         viewModel.loading.observe(this) {
             binding.progressBar.isVisible = it
         }
