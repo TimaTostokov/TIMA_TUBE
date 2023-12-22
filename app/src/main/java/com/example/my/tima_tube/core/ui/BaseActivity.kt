@@ -21,8 +21,8 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> : AppCompatAct
         initListener()
     }
 
-    open fun initViewModel() {} // инициализация вьюмодэла
-    open fun checkConnection() {} // проверка на интернет
-    open fun initView() {} // инициализация вьюшек
+    open fun initViewModel() {} // инициализация ViewModel
+    open fun checkConnection() {} // checkInternetConnection
+    open fun initView() {} // инициализация Views
     open fun initListener() {} // обработка всех кликов
 }

@@ -12,16 +12,6 @@ import com.example.my.tima_tube.ui.detail.adapter.DetailAdapter
 import com.example.my.tima_tube.ui.player.PlayerActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-private val Any.items: List<PlaylistItem.Item?>?
-    get() {
-        TODO("Not yet implemented")
-    }
-
-private val <Z> Resource<Z>.data: Any
-    get() {
-        TODO("Not yet implemented")
-    }
-
 class DetailActivity() : BaseActivity<ActivityDetailBinding, DetailViewModel>() {
     override fun inflateViewBinding(): ActivityDetailBinding {
         return ActivityDetailBinding.inflate(layoutInflater)
@@ -56,7 +46,6 @@ class DetailActivity() : BaseActivity<ActivityDetailBinding, DetailViewModel>() 
         val getId = intent.getStringExtra("id")
         val getTitle = intent.getStringExtra("title")
         val getDesc = intent.getStringExtra("desc")
-        val getCount = intent.getIntExtra("count", 0)
 
         viewModel.getPlaylistItem(getId).observe(this) {
             it.data.let { it1 ->

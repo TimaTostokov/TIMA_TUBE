@@ -6,12 +6,13 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.my.tima_tube.core.ext.ConnectionLiveData
 import com.example.my.tima_tube.core.ui.BaseActivity
+import com.example.my.tima_tube.data.remote.model.Item1
 import com.example.my.tima_tube.databinding.ActivityPlaylistsBinding
 import com.example.my.tima_tube.result.Status
 import com.example.my.tima_tube.ui.detail.DetailActivity
 import com.example.my.tima_tube.ui.playlists.adapter.PlaylistAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.example.my.tima_tube.data.remote.model.Item1
+
 class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewModel>() {
 
     private var adapter = PlaylistAdapter(this::onClick)
@@ -75,10 +76,6 @@ class PlaylistsActivity : BaseActivity<ActivityPlaylistsBinding, PlaylistsViewMo
         intent.putExtra("desc", item.snippet.description)
         intent.putExtra("count", item.contentDetails.itemCount)
         startActivity(intent)
-    }
-
-    companion object {
-        const val ID = "id"
     }
 
 }
