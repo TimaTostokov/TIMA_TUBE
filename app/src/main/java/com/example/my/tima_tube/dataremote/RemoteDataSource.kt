@@ -13,7 +13,6 @@ val remoteDataSource = module {
 
 class RemoteDataSource(private val apiService: ApiService) : BaseDataSource() {
 
-
     suspend fun getPlayLists(): Resource<PlayLists> {
         return getResult {
             apiService.getPlayLists(

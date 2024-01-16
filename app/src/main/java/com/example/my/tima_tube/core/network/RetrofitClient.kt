@@ -24,7 +24,6 @@ fun provideOkHttpClient(): OkHttpClient {
         .connectTimeout(20, TimeUnit.SECONDS)
         .addInterceptor(interceptor)
         .build()
-
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {

@@ -11,14 +11,12 @@ class CustomCardView(private val context: Context, private val attributeSet: Att
 
     private val binding = CustomCardViewBinding.inflate(LayoutInflater.from(context), this, false)
 
-
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val width = MeasureSpec.getSize(widthMeasureSpec)
         val height = MeasureSpec.getSize(heightMeasureSpec)
         setMeasuredDimension(width, height)
     }
-
     fun onCustomButtonClick(onClick: () -> Unit) = with(binding) {
         customButton.setOnClickListener {
             onClick()
